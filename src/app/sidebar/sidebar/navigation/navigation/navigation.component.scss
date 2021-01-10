@@ -1,0 +1,50 @@
+span{
+    position: relative;
+    bottom: 3px;
+}
+ul{
+    list-style: none;
+    padding-inline-start: 20px;
+    position: relative;
+}
+
+li{
+    padding: 5px 8px;
+    vertical-align: middle;
+}
+li:hover{
+    background-color: gray;
+    border-radius: 5px;
+}
+// }
+// span:hover{
+//     color: palevioletred;
+// }
+svg{
+    fill: white;
+    height: 24px;
+    width: 24px;
+}
+// svg:hover{
+//     color: palevioletred;
+//     fill: palevioletred;
+// }
+a{
+    display: block;
+    text-decoration: none;
+    color: whitesmoke;
+    margin-bottom: 2px;
+    
+}
+.browse{
+    height: 24px;
+    width: 24px;
+    color: whitesmoke;
+}
+.item{
+    border-radius: 4px;
+    padding: 0 0 0 15px;
+    height: 50px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}

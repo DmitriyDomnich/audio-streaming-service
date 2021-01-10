@@ -1,0 +1,11 @@
+.mainTopbarDiv{
+    position: sticky;
+    width: 85%;
+    height: 60px;
+    top: 0;
+    border-bottom: 3px solid black;
+    left: 15%;
+    background-color: black;
+    margin-left: 2px;
+    max-height: 5vh;
+}

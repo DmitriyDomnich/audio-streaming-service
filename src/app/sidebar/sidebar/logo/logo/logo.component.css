@@ -1,0 +1,25 @@
+.logoDiv{
+    margin: 20px;
+    position: relative;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    cursor: pointer;
+}
+.name{
+    color: palevioletred;
+    margin-left: 2px;
+    position: relative;
+    bottom: 20px;
+    font-size: 1em;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+div img{
+    height: 80px;
+    width: auto;
+}

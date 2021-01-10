@@ -1,0 +1,13 @@
+.playlistsDiv{
+    margin: 10px 27.5px 10px 27.5px;
+}
+p{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgb(231, 9, 183);
+    pointer-events: none;
+}
+hr{
+    margin: 10px 0px;
+    color: gray;
+}

@@ -1,0 +1,9 @@
+.mainDiv{
+    position: absolute;
+    margin: 10px;
+    top: 6.5vh;
+    left: 15%;
+    width: 84%;
+    height: 79%;
+    overflow-y: auto;
+}
