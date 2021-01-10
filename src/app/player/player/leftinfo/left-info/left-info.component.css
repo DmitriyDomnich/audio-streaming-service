@@ -1,0 +1,33 @@
+.container{
+    margin: 15px;
+    width: 35%;
+    position: sticky;
+    bottom: 15px;
+}
+img{
+    height: 60px;
+    width: 60px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+a:hover{
+    text-decoration:underline;
+}
+.songRef{
+    display: inline-block;
+    vertical-align: top;
+    left: 5px;
+    top: 7px;
+}
+.artistsRef{
+    display: inline-block;
+    vertical-align: middle;
+    color: pink;
+    position: relative;
+    font-size: 0.8em;
+    right: 23px;
+    bottom: 15px;
+}

@@ -1,0 +1,13 @@
+.mainSidebarDiv{
+    width: 15%;
+    border-right: 3px solid black;
+    height: 90vh;
+    position: fixed;
+    background-color: black;
+    color: white;
+}
+.homeButton{
+    background: palevioletred;
+    height: 40px;
+    width: auto;
+}

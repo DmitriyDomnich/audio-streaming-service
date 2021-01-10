@@ -1,0 +1,61 @@
+.container {
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.top {
+  margin-top: 10px;
+}
+.leftTime{
+    position: absolute;
+    left: -5%;
+    bottom: 1.8vh;
+    color: pink;
+}
+.rightTime{
+    position: absolute;
+    bottom: 1.8vh;
+    color: pink;
+    right: -4%;
+}
+.slider {
+  width: 100%;
+  position: relative;
+}
+svg {
+  height: 20px;
+  width: 20px;
+  fill: white;
+}
+.playButton {
+  height: 28px;
+  width: 28px;
+}
+.bigger {
+  height: 22px;
+  width: 22px;
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  margin: 0 5px;
+}
+
+.extreme {
+  margin: 0 10px;
+}
+svg:active {
+  fill: palevioletred;
+}
+input[type=range]::-webkit-slider-thumb {
+    background: red;
+}
+input[type=range]::-moz-range-thumb {
+    background: red;
+}
+input[type=range]::-ms-thumb {
+    background: red;
+}
