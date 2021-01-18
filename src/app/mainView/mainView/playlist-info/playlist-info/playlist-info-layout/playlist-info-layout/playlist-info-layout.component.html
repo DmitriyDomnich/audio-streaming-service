@@ -1,0 +1,19 @@
+<div class="container" >
+    <div class="imgDiv">
+        <img src="{{playlistInfo.image}}" alt="" height="540px" width="540px" draggable="false">
+    </div>
+    <div class="infoDiv">
+        PLAYLIST
+        <br>
+        <span class="xx-large">{{playlistInfo.name}}</span>
+        <br>
+        <span class="bigger">{{playlistInfo.description}}</span>
+        <br>
+        <span class="medium">Created by {{playlistInfo.user?.name}}</span>
+        <div class="followers">
+            {{playlistInfo.followers |number}} followers
+        </div>
+        <br>
+        {{total}} tracks
+    </div>
+</div>

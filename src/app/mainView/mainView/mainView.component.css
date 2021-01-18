@@ -1,9 +1,22 @@
 .mainDiv{
     position: absolute;
-    margin: 10px;
-    top: 6.5vh;
-    left: 15%;
-    width: 84%;
-    height: 79%;
+    top: 5.3vh;
+    left: 15.1%;
+    width: 84.9%;
+    height: 84.5%;
     overflow-y: auto;
+    background-color: hotpink;
+    margin-bottom: -5px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: black;
+} 
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

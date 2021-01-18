@@ -1,0 +1,18 @@
+<nav>
+  <a routerLink="/collection/likedtracks" [title]='"Liked tracks"'
+    ><button mat-fab routerLinkActive="example" class="leftButton">
+      <mat-icon >favorite</mat-icon>
+    </button></a
+  >
+  <a routerLink="/collection/artists" [title]='"Favourite artists"'>
+    <button mat-fab routerLinkActive="example"> &nbsp;
+        <mat-icon svgIcon="artist" aria-hidden="false" aria-label="Artist" class="svg" ></mat-icon>
+    </button></a
+  >
+  <a routerLink="/collection/albums" [title]='"Favourite albums"'
+    ><button mat-fab routerLinkActive='example' class="rightButtton">
+        <mat-icon svgIcon="album" aria-hidden="false" aria-label="Album" class="svg" ></mat-icon>
+    </button></a
+  >
+</nav>
+<router-outlet></router-outlet>

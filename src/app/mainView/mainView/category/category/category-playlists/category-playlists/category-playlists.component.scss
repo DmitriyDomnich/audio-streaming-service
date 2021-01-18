@@ -1,0 +1,37 @@
+.container{
+    margin: 15px;
+    margin-left: 5%;
+    margin-right: 0;
+    color: white;
+}
+.row{
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.card{
+    color: white;
+    float: left;
+    text-align: center;
+    width: 15%;
+    padding: 15px;
+    padding-top: 20px;
+    height: 350px;
+    margin: 20px;
+    background: linear-gradient(black, transparent);
+    text-overflow: ellipsis;
+    white-space: hidden;
+    outline: none;
+}
+.card:hover{
+    background: linear-gradient(transparent,black);
+}
+.mat-card{
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+    height: 240px;
+}

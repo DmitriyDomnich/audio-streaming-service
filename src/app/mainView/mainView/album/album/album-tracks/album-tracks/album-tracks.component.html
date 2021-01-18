@@ -1,0 +1,62 @@
+<div class="container">
+  <mat-form-field class="input">
+    <mat-label>Look for tracks, artists</mat-label>
+    <span matPrefix
+      ><svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="18px"
+        height="18px"
+        viewBox="0 0 612.01 612.01"
+        style="enable-background: new 0 0 612.01 612.01"
+        xml:space="preserve"
+      >
+        <path
+          d="M606.209,578.714L448.198,423.228C489.576,378.272,515,318.817,515,253.393C514.98,113.439,399.704,0,257.493,0
+                       C115.282,0,0.006,113.439,0.006,253.393s115.276,253.393,257.487,253.393c61.445,0,117.801-21.253,162.068-56.586
+                       l158.624,156.099c7.729,7.614,20.277,7.614,28.006,0C613.938,598.686,613.938,586.328,606.209,578.714z M257.493,467.8
+                       c-120.326,0-217.869-95.993-217.869-214.407S137.167,38.986,257.493,38.986c120.327,0,217.869,95.993,217.869,214.407
+                       S377.82,467.8,257.493,467.8z"
+        />
+      </svg>
+      &nbsp;
+    </span>
+    <button matSuffix mat-button mat-icon-button aria-label="Clear" (click)="input.value = ''; applyFilter($event)" *ngIf='input.value'>x</button>
+    <input #input type="search" (keyup)="applyFilter($event)" matInput autocomplete="off" spellcheck="false">
+  </mat-form-field>
+  <table mat-table [dataSource]='dataSource' >
+    <ng-container matColumnDef='title'>
+        <th mat-header-cell *matHeaderCellDef >TITLE</th>
+        <td mat-cell *matCellDef='let track'>
+          {{track.name}}
+          <p>
+            <span *ngFor='let artist of track.artists; let i = index'>
+              <a [routerLink]="['../../artist', artist.id]">{{artist.name}}</a>
+              <ng-container *ngIf='i !== track.artists.length - 1'>,
+              </ng-container>
+            </span>
+          </p>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef='explicit'>
+        <th mat-header-cell *matHeaderCellDef ></th>
+        <td #cell mat-cell *matCellDef='let track'>
+          <ng-container *ngIf='track.isExplicit'>
+            <mat-icon svgIcon="explicit" aria-hidden="false" aria-label="18+"></mat-icon>
+          </ng-container>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef='duration'>
+        <th mat-header-cell *matHeaderCellDef>TIME</th>
+        <td mat-cell *matCellDef='let track'>{{getTimeFromMilliseconds(track.duration)}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef='columnsToDisplay; sticky: true'></tr>
+    <tr mat-row *matRowDef='let row; columns: columnsToDisplay'></tr>
+  </table>
+</div>
+<div class="copyrights">
+  {{copyrights}}
+</div>

@@ -1,0 +1,46 @@
+.container {
+  margin: 10px;
+  margin-right: 0;
+  color: white;
+}
+.title{
+    text-align: center;
+    margin: 10px 0;
+}
+.row {
+    margin-left: 2%;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.card img{
+    width: 100%;
+    height: 240px;
+}
+.card {
+  color: white;
+  float: left;
+  text-align: center;
+  width: 15%;
+  padding: 15px;
+  padding-top: 20px;
+  height: 350px;
+  margin: 20px;
+  background: linear-gradient(black, transparent);
+  text-overflow: ellipsis;
+  white-space: hidden;
+  outline: none;
+  cursor: pointer;
+}
+.card:hover{
+    background: linear-gradient(black, red);
+}
