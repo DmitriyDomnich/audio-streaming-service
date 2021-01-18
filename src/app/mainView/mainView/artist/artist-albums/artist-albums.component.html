@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>
+        Albums
+    </h1>
+   <div class="row">
+       <div *ngFor='let album of albums' class="card" >
+           <a [routerLink]='["../../album", album.id]'>
+            <img src="{{album.image}}" alt="" draggable="false">
+            <p>
+                <span>{{album.name}}</span>
+            </p>
+           </a>
+       </div>
+   </div>
+</div>

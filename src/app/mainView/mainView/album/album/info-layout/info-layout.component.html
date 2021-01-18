@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="imgDiv">
+    <img
+      src="{{ album.image }}"
+      alt=""
+      height="540px"
+      width="540px"
+      draggable="false"
+    />
+  </div>
+  <div class="infoDiv">
+    <h2>{{ album.albumType | titlecase }}</h2>
+    <h1>{{ album.name }}</h1>
+    <br />
+    <p>
+      By
+      <span *ngFor="let artist of album.artists; let i = index">
+        <a [routerLink]="['../../artist', artist.id]">{{ artist.name }} </a>
+      </span>
+    </p>
+    <p>
+      {{ album.releaseDate }}
+    </p>
+  </div>
+</div>

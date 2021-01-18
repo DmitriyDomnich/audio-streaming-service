@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Related Artists</h1>
+  <ng-container *ngFor="let artist of artists">
+    <a [routerLink]="['../../artist', artist.id]">
+      <div class="content">
+        <img src="{{ artist.image }}" alt="img" draggable="false" />
+        <span>{{ artist.name }}</span>
+      </div>
+      <br>
+    </a>
+  </ng-container>
+</div>

@@ -1,6 +1,12 @@
+<p>
+  Playlists
+</p>
+<hr>
 <div class="playlistsDiv">
-  <p>
-    Playlists
-  </p>
-  <hr>
+  <div>
+    <div *ngFor='let playlist of playlists' routerLinkActive='active'>
+      <a [routerLink]="['playlist', playlist.id]" >{{playlist.name}}</a>
+      <br>
+    </div>
+  <div>
 </div>

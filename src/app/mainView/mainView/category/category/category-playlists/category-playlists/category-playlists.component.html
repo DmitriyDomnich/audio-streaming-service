@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+      <mat-card *ngFor='let playlist of playlists' class="card" (click)="goToPlaylist(playlist.id)">
+
+        <img mat-card-image src="{{playlist.image}}" draggable="false">
+        <mat-card-title>{{playlist.name}}</mat-card-title>
+        <mat-card-content>{{playlist.description}}</mat-card-content>
+      </mat-card>
+    
+  </div>
+</div>

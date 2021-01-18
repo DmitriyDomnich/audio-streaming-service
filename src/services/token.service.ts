@@ -28,8 +28,10 @@ export class TokenService{
         'user-read-email',
         'user-read-private',
         'user-library-read',
-        'playlist-read-collaborative'
+        'playlist-read-collaborative',
+        'streaming'
     ];
+    private redirectRoute: any;
     private _loginUrl = `${this._authPath}?client_id=${this._client_id}&redirect_uri=${this._redirect_uri}&scope=${this._scopes.join('%20')}&response_type=token`;
     constructor(
         private http: HttpClient,
@@ -38,10 +40,8 @@ export class TokenService{
 
     setAuthToken(): void{
         const substr = window.location.hash.substring(1).split('&');
-        setTimeout(() => {
-            localStorage.setItem('token', substr[0].split('=')[1]);
-            window.location.hash = '';
-        });
+        localStorage.setItem('token', substr[0].split('=')[1]);
+        window.location.hash = '';
         const now = new Date();
         localStorage.setItem('creationTime', `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()} ${this.getTime(now)}`);
     }
@@ -49,14 +49,18 @@ export class TokenService{
     getLoginUrl(): void{
         window.location.href = this._loginUrl;
     }
-
+    getRedirectRoute(): any{
+        return this.redirectRoute;
+    }
+    setRedirectRoute(): void{
+        this.redirectRoute = '';
+    }
     refreshToken(): void{
-        const currentRoute = this.router.url;
+        this.redirectRoute = this.router.url;
         window.location.href = this._loginUrl;
         this.setAuthToken();
-        this.router.navigate([`${currentRoute}`]);
+        // this.router.navigate([`${currentRoute}`]);
     }
-
     checkToken(): boolean{
         const now = new Date();
         const currentTime = this.getTime(now);

@@ -12,6 +12,6 @@ export class LoginComponent{
     ) {  }
 
     getLoginUrl(): void{
-        this.tokenService.getLoginUrl();
+        setTimeout(() => this.tokenService.getLoginUrl());
     }
 }

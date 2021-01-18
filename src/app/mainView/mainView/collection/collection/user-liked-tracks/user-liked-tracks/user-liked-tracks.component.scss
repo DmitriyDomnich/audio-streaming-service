@@ -1,0 +1,48 @@
+.container{
+    margin: 10px 5px 10px 15px;
+    position: relative;
+}
+h1{
+    text-align: center;
+    right: 15px;
+    margin: 10px 0;
+    color: white;
+    font-size: 36px;
+}
+table{
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    text-overflow: clip;
+    
+}
+.mat-column-title{
+    width: 27%;
+    
+}
+.mat-column-duration{
+    width: 5%;
+    
+}
+.mat-column-added_at{
+    width: 5%;
+    
+}
+.mat-column-album{
+    width: 25%;
+    
+}
+.mat-column-artists{
+    width: 22%;
+    
+}
+.mat-form-field{
+    width: 100%;
+}
+th{
+    background-color: hotpink;
+}
+*{
+    font-size: 18px;
+}

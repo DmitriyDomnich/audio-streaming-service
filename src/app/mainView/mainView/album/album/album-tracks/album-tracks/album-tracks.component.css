@@ -1,0 +1,38 @@
+.container{
+    margin: 5px 5px 10px 15px;
+    position: relative;
+}
+table{
+    width: 100%;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    text-overflow: clip;
+    margin-top: 0;
+}
+.mat-form-field{
+    width: 100%;
+}
+.svg{
+    height: 48px;
+    width: 48px;
+}
+th{
+    background-color: hotpink;
+}
+*{
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+a:hover{
+    text-decoration: underline;
+}
+.copyrights{
+    text-align: end;
+    font-size: 13px;
+    margin-right: 5px;
+}

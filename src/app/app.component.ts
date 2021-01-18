@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnChanges, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnChanges, OnInit, AfterViewInit, AfterContentChecked, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TokenService } from '../services/token.service';
@@ -10,7 +10,7 @@ import { TokenService } from '../services/token.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements AfterViewInit{
+export class AppComponent{
     title = 'Musify';
     token = localStorage.getItem('token');
 
@@ -19,9 +19,6 @@ export class AppComponent implements AfterViewInit{
         private http: HttpClient,
         private router: Router
     ) {
-    }
-    ngAfterViewInit(): void{
-
     }
 
 }

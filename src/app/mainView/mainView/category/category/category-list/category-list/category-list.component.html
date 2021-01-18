@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="title">Categories & Moods</div>
+  <div class="row">
+    <!-- src="{{card.image}}" appBackImage -->
+    <div *ngFor="let card of categories" class="card">
+      <a [routerLink]="card.id">
+        <img src="{{ card.image }}" alt="" draggable="false" />
+        <p>
+          {{ card.name }}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>
