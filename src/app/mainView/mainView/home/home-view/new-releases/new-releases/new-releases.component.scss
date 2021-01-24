@@ -1,0 +1,51 @@
+.container{
+    margin: 15px;
+    color: white;
+}
+h1{
+    margin: 15px;
+    font-size: 28px;
+    color: white;
+    position: relative;
+    right: 3%;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+}
+.title{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 10%;
+    padding: 0;
+}
+.row{
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.card{
+    float: left;
+    width: 19%;
+    padding: 20px;
+    height: 280px;
+    margin: 0 20px 30px 20px;
+}
+.card p{
+    
+    position: relative;
+    z-index: 100;
+    text-align: center;
+    font-size: 1.5em;
+}
+.card img{
+    width: 100%;
+    height: 240px;
+}

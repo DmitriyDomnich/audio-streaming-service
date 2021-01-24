@@ -16,7 +16,7 @@ export class CategoriesService {
       headers: heads,
       params: {
         limit: '40',
-        locale: 'en_UK'
+        locale: 'en_US'
       },
     };
     return this.http

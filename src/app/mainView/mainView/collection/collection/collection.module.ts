@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PlaylistInfoModule } from '../../playlist-info/playlist-info/playlist-info.module';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatCard } from '@angular/material/card';
 
 @NgModule({
   imports: [

@@ -1,4 +1,18 @@
 <div class="container">
+  <div class="followButton">
+    <ng-container *ngIf='followed[0] === true; else notLiked'>
+      <button mat-fab (click)='dislikeAlbum(album.id)' class="liked" title="Press to dislike the album">
+        <mat-icon mat-fat>favorite</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #notLiked>
+      <ng-container>
+        <button mat-fab (click)='likeAlbum(album.id)' class="disliked" title="Press to like the album">
+          <mat-icon mat-fat>favorite</mat-icon>
+        </button>
+      </ng-container>
+    </ng-template>
+  </div>
   <div class="imgDiv">
     <img
       src="{{ album.image }}"

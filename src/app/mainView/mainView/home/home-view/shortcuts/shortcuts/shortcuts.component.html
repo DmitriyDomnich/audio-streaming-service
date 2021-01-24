@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Shortcuts</h1>
+  <div class="row">
+    <div class="card" *ngFor='let album of albumsShortcuts'>
+      <a [routerLink]="['album', album.id]">
+        <img src="{{album.image}}" alt="">&nbsp;
+        <span>{{album.name}}</span>
+      </a>
+    </div>
+    <br>
+    <div class="card" *ngFor='let artist of artistsShortcuts'>
+      <a [routerLink]="['artist', artist.id]">
+        <img src="{{artist.image}}" alt="">
+        <span>{{artist.name}}</span>
+      </a>
+    </div>
+  </div>
+</div>

@@ -27,7 +27,30 @@
     <button matSuffix mat-button mat-icon-button aria-label="Clear" (click)="input.value = ''; applyFilter($event)" *ngIf='input.value'>x</button>
     <input #input type="search" (keyup)="applyFilter($event)" matInput autocomplete="off" spellcheck="false">
   </mat-form-field>
-  <table mat-table [dataSource]='dataSource' >
+  <table mat-table [dataSource]='dataSource'>
+    <ng-container matColumnDef="index" >
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let index = index">{{index + 1}} </td>
+    </ng-container>
+    <ng-container matColumnDef='isLiked' >
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef='let track'>
+        <ng-container *ngIf='track.isLiked; else notHeart'>
+          <mat-icon class="heart" (click)='deleteFavorite(track.id)' style="cursor: default;">favorite</mat-icon>
+        </ng-container>
+        <ng-template #notHeart >
+            <button (click)='makeFavorite(track.id)'>
+              <span class="notFilledHeart">♡</span>
+            </button>
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="playButton">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let track">
+        <mat-icon class="play" (click)='playSong(id, track.trackNum)' svgIcon="play" aria-hidden="false" aria-label="Play" ></mat-icon> 
+      </td>
+    </ng-container>
     <ng-container matColumnDef='title'>
         <th mat-header-cell *matHeaderCellDef >TITLE</th>
         <td mat-cell *matCellDef='let track'>
@@ -53,8 +76,8 @@
         <th mat-header-cell *matHeaderCellDef>TIME</th>
         <td mat-cell *matCellDef='let track'>{{getTimeFromMilliseconds(track.duration)}}</td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef='columnsToDisplay; sticky: true'></tr>
-    <tr mat-row *matRowDef='let row; columns: columnsToDisplay'></tr>
+    <tr mat-header-row  *matHeaderRowDef='columnsToDisplay; sticky: true'></tr>
+    <tr mat-row appSongHovered (contextmenu)='addTrackToQ(row, $event)' *matRowDef='let row; columns: columnsToDisplay'></tr>
   </table>
 </div>
 <div class="copyrights">

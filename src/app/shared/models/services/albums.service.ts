@@ -9,7 +9,17 @@ import { Album } from '../album';
 })
 export class AlbumsService {
   constructor(private http: HttpClient) {}
-
+  getAlbumTotal(id: string): Observable<number>{
+    const token = localStorage.getItem('token');
+    const heads = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http
+      .get(`https://api.spotify.com/v1/albums/${id}`, {headers: heads})
+      .pipe(
+        map((obj: any) => {
+          return obj.total;
+        })
+      );
+  }
   getAlbumById(id: string): Observable<Album>{
     const token = localStorage.getItem('token');
     const heads = new HttpHeaders().set('Authorization', 'Bearer ' + token);
@@ -25,7 +35,8 @@ export class AlbumsService {
           }),
           releaseDate: album.release_date,
           albumType: album.album_type,
-          name: album.name
+          name: album.name,
+          total: album.total
         };
       }));
   }

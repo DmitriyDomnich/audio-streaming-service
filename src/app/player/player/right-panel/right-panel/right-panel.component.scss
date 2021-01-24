@@ -1,7 +1,7 @@
 div{
     position: absolute;
     right: 5%;
-    bottom: 2vh;
+    bottom: 3vh;
     color: white;
 }
 svg{
@@ -9,7 +9,10 @@ svg{
     width: 20px;
     fill: white;
 }
+input{
+    outline: none;
 
+}
 button {
     outline: none;
     background: transparent;

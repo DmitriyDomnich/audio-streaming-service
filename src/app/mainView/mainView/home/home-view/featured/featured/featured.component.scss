@@ -1,0 +1,46 @@
+.container{
+    margin: 15px;
+    margin-left: 5%;
+    margin-right: 0;
+    color: white;
+}
+h1{
+    margin: 15px;
+    font-size: 28px;
+    color: white;
+    position: relative;
+    right: 3%;
+    text-align: center;
+}
+.row{
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.card{
+    color: white;
+    float: left;
+    text-align: center;
+    width: 15%;
+    padding: 15px;
+    padding-top: 20px;
+    height: 350px;
+    margin: 20px;
+    background: linear-gradient(black, transparent);
+    text-overflow: ellipsis;
+    white-space: hidden;
+    outline: none;
+}
+.card:hover{
+    background: linear-gradient(transparent,black);
+}
+.card img{
+    width: 100%;
+    height: 240px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}

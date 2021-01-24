@@ -2,7 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit, AfterViewInit, AfterContentChecked, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import { TokenService } from '../services/token.service';
+// import { createPlayer } from 'src/assets/scripts/player.js';
+
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,7 @@ import { TokenService } from '../services/token.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
     title = 'Musify';
     token = localStorage.getItem('token');
 
@@ -19,6 +22,11 @@ export class AppComponent{
         private http: HttpClient,
         private router: Router
     ) {
+      
+    }
+    ngOnInit(): void{
+
+      // playerCreator.createPlayer();
     }
 
 }

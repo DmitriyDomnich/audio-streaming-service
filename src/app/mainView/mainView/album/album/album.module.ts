@@ -8,6 +8,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { SongHoveredDirective } from 'src/app/shared/models/directives/song-hovered.directive';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
@@ -18,8 +21,9 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatInputModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ],
-  declarations: [AlbumComponent, InfoLayoutComponent, AlbumTracksComponent]
+  declarations: [AlbumComponent, InfoLayoutComponent, AlbumTracksComponent, SongHoveredDirective]
 })
 export class AlbumModule { }

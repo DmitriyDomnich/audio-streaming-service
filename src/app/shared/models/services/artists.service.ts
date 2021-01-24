@@ -52,6 +52,11 @@ export class ArtistsService {
               name: track.name,
               isExplicit: track.explicit,
               duration: track.duration_ms,
+              artists: track.artists.map((artist: any) => {
+                return {
+                  id: artist.id, name: artist.name
+                };
+              })
             };
           });
         })
@@ -79,6 +84,37 @@ export class ArtistsService {
           });
         })
       );
+  }
+  getUserFollowedArtists(): Observable<Artist[]>{
+    const heads = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + localStorage.getItem('token')
+    );
+    const httpOptions = {
+      headers: heads,
+      params: {
+        type: 'artist',
+        limit: '50'
+      },
+    };
+    return this.http.get(`https://api.spotify.com/v1/me/following`, httpOptions).pipe(
+      map((data: any) => {
+        const artistsLit = 'artists';
+        const itemsLit = 'items';
+        const artists = data[artistsLit];
+        const items = artists[itemsLit];
+        console.log(data);
+        return items.map(
+          (artist: any) => {
+            return {
+              id: artist.id,
+              name: artist.name,
+              image: artist.images[0].url,
+            };
+          }
+        );
+      })
+    );
   }
   getArtistAlbums(id: string): Observable<Album[]>{
     const heads = new HttpHeaders().set(

@@ -1,6 +1,6 @@
 .container{
     margin: 15px;
-    width: 35%;
+    width: 30%;
     position: sticky;
     bottom: 15px;
 }
@@ -26,8 +26,8 @@ a:hover{
     display: inline-block;
     vertical-align: middle;
     color: pink;
-    position: relative;
+    position: absolute;
     font-size: 0.8em;
-    right: 23px;
+    left: 11%;
     bottom: 15px;
 }

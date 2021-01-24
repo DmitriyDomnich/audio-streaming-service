@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewInit, Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnInit } from '@angular/core';
 import { Playlist } from '../../../shared/models/playlist';
 
 import { Router } from '@angular/router';
@@ -10,7 +10,6 @@ import { PlaylistsService } from 'src/app/shared/models/services/playlists.servi
   styleUrls: ['./playlists.component.css']
 })
 export class PlaylistsComponent implements AfterViewInit{
-
   playlists: Playlist[] = [];
 
   constructor(
@@ -20,6 +19,7 @@ export class PlaylistsComponent implements AfterViewInit{
 
   ngAfterViewInit(): void{ // AfterViewInit вроде работает, onChanges - нет, doCheck - лагает,
     this.playlistsService.getUserPlaylists().subscribe((data) => this.playlists = data);
+
   }
 
 }

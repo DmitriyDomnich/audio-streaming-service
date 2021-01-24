@@ -1,7 +1,7 @@
 <div class="container">
   <div class="top">
-    <button class="extreme">
-      <svg
+    <button class="extreme" (click)='toggleShuffle(changeShuffleBool())' >
+      <svg [style.fill]="isShuffled ? 'palevioletred' : 'white'"
         enable-background="new 0 0 515.555 515.555"
         viewBox="0 0 515.555 515.555"
         xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@
         />
       </svg>
     </button>
-    <button>
+    <button (click)='playPrevious()' class="justToClick">
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
@@ -33,27 +33,15 @@
         />
       </svg>
     </button>
-    <button>
-      <svg
-        class="playButton"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 512 512"
-        style="enable-background: new 0 0 512 512"
-        xml:space="preserve"
-      >
-        <path
-          d="M256,0C114.833,0,0,114.844,0,256s114.833,256,256,256s256-114.844,256-256S397.167,0,256,0z M357.771,264.969
-         l-149.333,96c-1.75,1.135-3.771,1.698-5.771,1.698c-1.75,0-3.521-0.438-5.104-1.302C194.125,359.49,192,355.906,192,352V160
-         c0-3.906,2.125-7.49,5.563-9.365c3.375-1.854,7.604-1.74,10.875,0.396l149.333,96c3.042,1.958,4.896,5.344,4.896,8.969
-         S360.813,263.01,357.771,264.969z"
-        />
-      </svg>
-    </button>
-    <button>
+        <button (click)='resumePlayer()' *ngIf="isPaused; else play">
+        <mat-icon svgIcon="play" aria-hidden="false" aria-label="Press to play" class="playButton"></mat-icon>
+      </button>
+    <ng-template #play>
+      <button (click)='pausePlayer()'>
+        <mat-icon svgIcon="pause" aria-hidden="false" aria-label="Press to pause" class="playButton"></mat-icon>
+      </button>
+    </ng-template>
+    <button (click)='playNext()' class="justToClick">
       <svg
         version="1.1"
         id="Capa_1"
@@ -72,8 +60,8 @@
         />
       </svg>
     </button>
-    <button class="extreme">
-      <svg
+    <button class="extreme" (click)='toggleRepeat(changeRepeatBool())'>
+      <svg [style.fill]="isOnRepeat ? 'palevioletred' : 'white'"
         version="1.1"
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
@@ -107,11 +95,11 @@
   </div>
 
     
-    <mat-slider class="slider"></mat-slider>
-    <div class="leftTime">
-      0:00
+    <input id="mainSlider" type="range" class="slider" step="1000" >
+    <div class="leftTime" id="leftTime">
+      
     </div>
-    <div class="rightTime">
-      4:16
+    <div class="rightTime" id="rightTime">
+      
     </div>
 </div>

@@ -6,6 +6,19 @@
     </h1>
     <div class="followers">
       {{artist.followers |number}} followers
-    </div> 
+    </div>
   </div>
+  <ng-container *ngIf='followed[0] === true; else notFollowed' class="followButton" >
+    <button mat-flat-button class="followButton liked" title="Press to unfollow the artist" (click)='unfollowArtist(artist.id)'>
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </ng-container>
+  <ng-template #notFollowed>
+    <ng-container >
+      <button mat-flat-button class="followButton notLiked" title="Press to follow the artist" (click)='followArtist(artist.id)'>
+        <mat-icon>favorite</mat-icon>
+      </button>
+    </ng-container>
+    
+  </ng-template>
 </div>

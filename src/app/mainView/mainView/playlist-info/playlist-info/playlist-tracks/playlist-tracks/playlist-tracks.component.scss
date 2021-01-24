@@ -10,6 +10,22 @@ table{
     text-overflow: ellipsis;
     
 }
+.heart{
+   font-size: 25px;
+   color: red;
+   margin-left: 4.5px;
+}
+.heart:hover{
+    color: black;
+}
+button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.notFilledHeart{
+    font-size: 32px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -21,6 +37,20 @@ a:hover{
 .mat-column-title{
     width: 27%;
     
+}
+.play:hover{
+    fill: crimson;
+    color: crimson;
+}
+.mat-row:hover{
+    background-color: rgb(223, 82, 180);
+}
+.notFilledHeart:hover{
+    color: red;
+    fill: red;
+}
+.mat-column-isLiked{
+    width: 5%;
 }
 .mat-column-duration{
     width: 5%;

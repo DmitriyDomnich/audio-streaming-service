@@ -12,13 +12,17 @@ import { CollectionComponent } from './mainView/mainView/collection/collection/c
 import { UserAlbumsComponent } from './mainView/mainView/collection/collection/user-albums/user-albums/user-albums.component';
 import { UserArtistsComponent } from './mainView/mainView/collection/collection/user-artists/user-artists/user-artists.component';
 import { UserLikedTracksComponent } from './mainView/mainView/collection/collection/user-liked-tracks/user-liked-tracks/user-liked-tracks.component';
+import { HomeViewComponent } from './mainView/mainView/home/home-view/home-view.component';
 import { PlaylistInfoComponent } from './mainView/mainView/playlist-info/playlist-info/playlist-info.component';
+import { SearchComponent } from './mainView/mainView/search/search/search.component';
 
 const mainViewRoutes: Routes = [
+  { path: 'search/:term', component: SearchComponent },
   { path: 'playlist/:id', component: PlaylistInfoComponent },
   { path: 'album/:id', component: AlbumComponent},
   { path: 'artist/:id', component: ArtistComponent},
   { path: 'categories', component: CategoryListComponent },
+  { path: '', component: HomeViewComponent },
   { path: 'categories/:id', component: CategoryPlaylistsComponent },
   {
     path: 'collection',

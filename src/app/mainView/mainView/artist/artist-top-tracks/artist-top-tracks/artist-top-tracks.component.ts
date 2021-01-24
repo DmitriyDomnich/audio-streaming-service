@@ -2,6 +2,8 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ArtistsService } from 'src/app/shared/models/services/artists.service';
+import { FollowServiceService } from 'src/app/shared/models/services/follow-service.service';
+import { PlayerService } from 'src/app/shared/models/services/player.service';
 import { Track } from 'src/app/shared/models/track';
 
 @Component({
@@ -15,14 +17,16 @@ export class ArtistTopTracksComponent implements OnChanges {
   constructor(
     private artistsService: ArtistsService,
     private iconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private playerService: PlayerService,
+    private followService: FollowServiceService
   ) {
     iconRegistry.addSvgIconLiteral(
       'explicit',
       sanitizer.bypassSecurityTrustHtml(this.explicitIcon)
     );
   }
-  columnsToDisplay = ['index', 'image', 'title', 'duration'];
+  columnsToDisplay = ['index', 'isLiked', 'play', 'image', 'title', 'duration'];
   explicitIcon = `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve">
 <g>
@@ -33,6 +37,14 @@ export class ArtistTopTracksComponent implements OnChanges {
  </g>
 </g>
 </svg>`;
+  playSong(id: string): void{
+    this.playerService.playSong(id).subscribe();
+  }
+  addTrackToQ(track: Track, event: MouseEvent): void{
+    event.preventDefault();
+    console.log('ADDDED ' + track);
+    this.playerService.addToQueue(track.id).subscribe();
+  }
   getTimeFromMilliseconds(s: number): string {
     const ms = s % 1000;
     s = (s - ms) / 1000;
@@ -43,15 +55,47 @@ export class ArtistTopTracksComponent implements OnChanges {
     secsFake < 10 ? (secs = '0' + secsFake) : (secs = secsFake.toString());
     return mins + ':' + secs;
   }
+  makeFavorite(id: string): void {
+    this.followService.saveTrack(id).subscribe(() => {
+      let i = 0;
+      let bool = true;
+      while (bool){
+        if (this.tracks[i].id === id){
+          this.tracks[i].isLiked = true;
+          bool = false;
+        }
+        i++;
+      }
+    });
+  }
+  deleteFavorite(id: string): void{
+    this.followService.deleteTrack(id).subscribe(() => {
+      let i = 0;
+      let bool = true;
+      while (bool){
+        if (this.tracks[i].id === id){
+          this.tracks[i].isLiked = false;
+          bool = false;
+        }
+        i++;
+      }
+    });
+  }
   ngOnChanges(): void {
     this.artistsService.getArtistTopTracks(this.id).subscribe((data) => {
-      const instanceArray = [];
+      const instanceArray: Track[] = [];
       for (let i = 0; i < 5; i++) {
         instanceArray[i] = data[i];
       }
-      this.tracks = instanceArray;
-      console.log('tracks');
-      console.log(this.tracks);
+      this.followService.checkIfSongLiked(instanceArray.map(track => track.id)).subscribe((boolArray: any) => {
+        let i = 0;
+        for (const track of instanceArray) {
+          track.isLiked = boolArray[i];
+          i++;
+        }
+        this.tracks = instanceArray;
+      });
+
     });
   }
 }

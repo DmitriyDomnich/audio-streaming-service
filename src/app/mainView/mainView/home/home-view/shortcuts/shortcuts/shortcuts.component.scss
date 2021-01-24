@@ -1,0 +1,62 @@
+.container{
+    margin: 15px;
+    color: white;
+    overflow-x: hidden;
+}
+h1{
+    font-size: 28px;
+    margin-left: 1.2%;
+}
+.row {
+ 
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.card img{
+    width: 40%;
+    height: 100px;
+    position: relative;
+    margin-bottom: 3px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  float: left;
+  width: 22%;
+  padding: 5px 0px 0 0;
+  height: 95px;
+  margin: 20px;
+  background: linear-gradient(black, transparent);
+  text-overflow: ellipsis;
+  white-space: hidden;
+  outline: none;
+  cursor: pointer;
+}
+.row:first{
+    padding-top: 10px;
+}
+span{
+    position: relative;
+    display: inline-flex;
+    bottom: 50px;
+    justify-content: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    margin-left: 5px;
+}
+.card:hover{
+    background: linear-gradient(black, red);
+}
