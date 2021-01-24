@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainView.component.css']
 })
 export class MainViewComponent implements OnInit {
-  @Output() pressed = new EventEmitter();
 
   constructor(
     private router: Router
@@ -15,12 +14,11 @@ export class MainViewComponent implements OnInit {
 
   ngOnInit() {
   }
-  press(): void{
-    this.pressed.emit();
-  }
+
   removeToken(): void{
     localStorage.removeItem('token');
     localStorage.removeItem('creationTime');
     this.router.navigate(['login']);
   }
+
 }

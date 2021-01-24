@@ -8,6 +8,21 @@
 .imgDiv{
     margin: 0px 20px;
 }
+.followButton{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: 100;
+}
+.mat-fab{
+    background-color: royalblue;
+}
+.liked{
+    color: red;
+}
+.disliked{
+    color: white;
+}
 img{
     margin-top: 1%;
     height: 220px;

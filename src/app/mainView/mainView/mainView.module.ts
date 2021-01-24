@@ -13,6 +13,9 @@ import { ActiveLinkDirective } from 'src/app/shared/models/directives/active-lin
 import { AlbumModule } from './album/album/album.module';
 import { PlaylistInfoComponent } from './playlist-info/playlist-info/playlist-info.component';
 import { ArtistModule } from './artist/artist.module';
+import { SearchModule } from './search/search/search.module';
+import { HomeViewModule } from './home/home-view/home-view.module';
+
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { ArtistModule } from './artist/artist.module';
     MatCardModule,
     MainViewRoutes,
     AlbumModule,
-    ArtistModule
+    ArtistModule,
+    HomeViewModule
   ],
   declarations: [MainViewComponent,  CategoryListComponent, CategoryPlaylistsComponent,
       BackImageDirective], // была эта хуйня и ArtistModule или CollectionModule

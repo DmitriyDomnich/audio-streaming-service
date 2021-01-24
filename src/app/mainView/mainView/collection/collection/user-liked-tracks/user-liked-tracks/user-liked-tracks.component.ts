@@ -12,14 +12,12 @@ import { Track } from 'src/app/shared/models/track';
 export class UserLikedTracksComponent implements OnInit {
   tracks: Track[] = [];
 
-  dataSource = new MatTableDataSource(this.tracks);
+
   constructor(
     private tracksService: TracksService
   ) { }
 
   ngOnInit(): void{
-    this.tracksService.getLikedTracks().subscribe(data => {
-      this.tracks = data;
-    });
+
   }
 }

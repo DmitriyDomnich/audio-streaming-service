@@ -1,15 +1,9 @@
+
+
 button{
-    border-radius: 50px;
-
-}
-
-.loginButton{
-    background-color: chartreuse;
-    height: 30px;
-    cursor: pointer;
-}
-
-a{
-    text-decoration: none;
-    color: black;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    width: 10%;
+    height: 5%;
 }

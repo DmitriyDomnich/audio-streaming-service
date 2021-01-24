@@ -1,0 +1,58 @@
+<div class="container" *ngIf='tracks.length'>
+  <h1>Songs</h1>
+
+    <table mat-table [dataSource]="tracks">
+      <ng-container matColumnDef='isLiked' >
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef='let track'>
+          <ng-container *ngIf='track.isLiked; else notHeart'>
+            <ng-container>
+              <mat-icon class="heart" (click)='deleteFavorite(track.id)' style="cursor: default;">favorite</mat-icon>
+            </ng-container>
+          </ng-container>
+          <ng-template #notHeart >
+              <button (click)='makeFavorite(track.id)'>
+                <span class="notFilledHeart">♡</span>
+              </button>
+          </ng-template>
+        </td>
+    </ng-container>
+      <ng-container matColumnDef="play">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <!-- TODO: взять номер трека в плейлисте  -->
+        <td mat-cell *matCellDef="let track"> 
+          <mat-icon (click)='playSong(track.id)' svgIcon="play" aria-hidden="false" aria-label="Play"></mat-icon> 
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef ></th>
+        <td mat-cell *matCellDef="let track"><img src="{{ track.album.image }}" alt="img" draggable="false"></td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef ></th>
+        <td mat-cell *matCellDef="let track">
+          {{ track.name }}
+          <p>
+            <ng-container *ngIf="track.isExplicit">
+              <mat-icon
+                svgIcon="explicit"
+                aria-hidden="false"
+                aria-label="18+"
+              ></mat-icon>&nbsp;
+              <span *ngFor='let artist of track.artists; let i = index'>
+                <a [routerLink]="['../../artist', artist.id]">{{artist.name}}</a>
+                <ng-container *ngIf='i !== track.artists.length - 1'>,
+                </ng-container>
+              </span>
+            </ng-container>
+          </p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="duration">
+        <th mat-header-cell *matHeaderCellDef ></th>
+        <td mat-cell *matCellDef="let track">{{ getTimeFromMilliseconds(track.duration) }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row (contextmenu)='addTrackToQ(row, $event)' *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+</div>

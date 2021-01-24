@@ -5,7 +5,8 @@ export interface Album {
     name: string;
     albumType?: string;
     image?: string;
-    copyrights: string;
+    copyrights?: string;
     artists?: Artist[];
     releaseDate?: string;
+    total?: number;
 }

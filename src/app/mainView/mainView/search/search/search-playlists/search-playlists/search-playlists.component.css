@@ -1,0 +1,44 @@
+.container{
+    position: relative;
+    color: white;
+    top: 10%;
+    margin-left: 1%;
+    margin-top: 10px;
+}
+.row {
+    margin-left: 2%;
+}
+h1{
+    text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.card img{
+    width: 100%;
+    height: 180px;
+}
+.card {
+  color: white;
+  float: left;
+  text-align: center;
+  width: 12%;
+  padding: 15px;
+  padding-top: 20px;
+  height: 200px;
+  margin: 30px;
+  background: blue;
+  text-overflow: ellipsis;
+  white-space: hidden;
+  outline: none;
+  cursor: pointer;
+}

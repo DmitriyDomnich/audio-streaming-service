@@ -10,8 +10,15 @@ table{
     text-overflow: clip;
     margin-top: 0;
 }
+.mat-row:hover{
+   background-color: rgb(223, 82, 180)
+}
 .mat-form-field{
     width: 100%;
+}
+.play:hover{
+    fill: crimson;
+    color: crimson;
 }
 .svg{
     height: 48px;
@@ -31,8 +38,28 @@ a{
 a:hover{
     text-decoration: underline;
 }
+.notFilledHeart:hover{
+    color: red;
+    fill: red;
+}
 .copyrights{
     text-align: end;
     font-size: 13px;
     margin-right: 5px;
 }
+.heart{
+    font-size: 25px;
+    color: red;
+    margin-left: 4.5px;
+ }
+ .heart:hover{
+     color: black;
+ }
+ button{
+     background-color: transparent;
+     outline: none;
+     border: none;
+ }
+ .notFilledHeart{
+     font-size: 32px;
+ }

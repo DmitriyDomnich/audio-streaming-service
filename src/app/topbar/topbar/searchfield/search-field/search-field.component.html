@@ -1,4 +1,5 @@
-<input type="search" name="" id="" placeholder="Search for Tracks, Artists, Playlists" spellcheck="false">
+<input #searchField (input)="navigate(searchField.value)"  type="search" name=""
+ id=""  placeholder="Search for Tracks, Artists, Playlists" spellcheck="false">
 <div>
     <span>
         🔎

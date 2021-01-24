@@ -1,4 +1,18 @@
-<div class="container" >
+<div class="container">
+    <div class="followedButton">
+        <ng-container *ngIf='followed[0]; else notLiked'>
+            <button mat-fab (click)='unfollowPlaylist(playlistInfo.id)' class="liked" title="Press to unfollow the playlist">
+              <mat-icon mat-fat>favorite</mat-icon>
+            </button>
+          </ng-container>
+          <ng-template #notLiked>
+            <ng-container>
+              <button mat-fab (click)='followPlaylist(playlistInfo.id)' class="disliked" title="Press to follow the playlist">
+                <mat-icon mat-fat>favorite</mat-icon>
+              </button>
+            </ng-container>
+        </ng-template>
+    </div>
     <div class="imgDiv">
         <img src="{{playlistInfo.image}}" alt="" height="540px" width="540px" draggable="false">
     </div>

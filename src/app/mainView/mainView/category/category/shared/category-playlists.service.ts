@@ -14,7 +14,7 @@ export class CategoryPlaylistsService {
     const httpOptions = {
       headers: heads,
       params: {
-        country: 'GB',
+        country: 'US',
       },
     };
     return this.http

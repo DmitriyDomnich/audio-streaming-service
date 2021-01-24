@@ -10,18 +10,25 @@
 .leftTime{
     position: absolute;
     left: -5%;
-    bottom: 1.8vh;
+    bottom: -5px;
     color: pink;
 }
 .rightTime{
     position: absolute;
-    bottom: 1.8vh;
+    bottom: -5px;
     color: pink;
-    right: -4%;
+    right: -6%;
 }
 .slider {
   width: 100%;
   position: relative;
+  top: 10px;
+  color: hotpink;
+
+}
+.slider::-webkit-slider-thumb{
+  background-color: hotpink;
+  fill: hotpink;
 }
 svg {
   height: 20px;
@@ -42,12 +49,28 @@ button {
   background: transparent;
   border: none;
   margin: 0 5px;
+  
 }
-
+.mat-icon{
+  fill: white;
+}
 .extreme {
   margin: 0 10px;
 }
+.rabotaydolbaeb{
+  fill: palevioletred;
+}
 svg:active {
+  fill: palevioletred;
+}
+svg:hover {
+  fill: hotpink;
+}
+.mat-icon:hover{
+  fill: hotpink;
+}
+.justToClick:hover{
+  // color: palevioletred;;
   fill: palevioletred;
 }
 input[type=range]::-webkit-slider-thumb {

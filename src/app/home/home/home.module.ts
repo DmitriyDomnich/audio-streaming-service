@@ -6,13 +6,14 @@ import { TopbarModule } from 'src/app/topbar/topbar/topbar.module';
 import { SidebarModule } from 'src/app/sidebar/sidebar/sidebar.module';
 import { PlayerModule } from 'src/app/player/player/player.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
     MainViewModule,
     TopbarModule,
     SidebarModule,
-    PlayerModule
+    PlayerModule,
   ],
   declarations: [ HomeComponent ],
   exports: [

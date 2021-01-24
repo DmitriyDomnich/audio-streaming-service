@@ -32,7 +32,7 @@ export class TokenService{
         'streaming'
     ];
     private redirectRoute: any;
-    private _loginUrl = `${this._authPath}?client_id=${this._client_id}&redirect_uri=${this._redirect_uri}&scope=${this._scopes.join('%20')}&response_type=token`;
+    private _loginUrl = `${this._authPath}?client_id=${this._client_id}&redirect_uri=${this._redirect_uri}&scope=${this._scopes.join('%20')}&response_type=token&show_dialog=true`;
     constructor(
         private http: HttpClient,
         private router: Router

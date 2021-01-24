@@ -1,0 +1,15 @@
+<div class="container" *ngIf='artists.length'>
+  <h1>
+    Artists
+  </h1>
+  <div class="row">
+    <div *ngFor='let artist of artists' class="card">
+      <a [routerLink]='["../../artist", artist.id]'>
+        <img src="{{artist.image}}" alt="">
+        <p>
+          <span>{{artist.name}}</span>
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

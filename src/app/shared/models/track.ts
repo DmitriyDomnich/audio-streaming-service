@@ -10,4 +10,6 @@ export interface Track{
     releaseDate?: string;
     duration: number;
     added_at: string;
+    trackNum?: number;
+    isLiked?: boolean;
 }

@@ -9,6 +9,27 @@
     margin: 0px 20px;
     
 }
+.followedButton{
+    position: absolute;
+    bottom: 23%;
+    right: 5%;
+    z-index: 100;
+}
+followButton{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: 100;
+}
+.mat-fab{
+    background-color: royalblue;
+}
+.liked{
+    color: red;
+}
+.disliked{
+    color: white;
+}
 .infoDiv{
     position: absolute;
     left: 15%;
@@ -22,8 +43,8 @@
 }
 .followers{
     position: absolute;
-    right: 5%;
-    bottom: 15%;
+    left: 0%;
+    bottom: 10%;
 }
 .medium{
     font-size: medium;

@@ -14,3 +14,40 @@ table{
     text-overflow: ellipsis;
     width: 73%;
 }
+.play:hover{
+    fill: crimson;
+    color: crimson;
+}
+.mat-row:hover{
+    background-color: rgb(223, 82, 180);
+}
+.heart{
+    font-size: 25px;
+    color: red;
+    margin-left: 4.5px;
+ }
+ .heart:hover{
+     color: black;
+ }
+ button{
+     background-color: transparent;
+     outline: none;
+     border: none;
+ }
+ .notFilledHeart{
+     font-size: 32px;
+}
+.notFilledHeart:hover{
+    color: red;
+    fill: red;
+}
+.mat-row:hover{
+    background-color: rgb(223, 82, 180);
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>
+    Featured Playlists
+  </h1>
+  <div class="row">
+    <ng-container *ngFor='let playlist of playlists'>
+      <a [routerLink]="['playlist', playlist.id]">
+      <div class="card" >
+          <img src="{{playlist.image}}" alt="">
+          <p>
+            {{playlist.name}}
+          </p>
+      </div>
+    </a>
+    </ng-container>
+    
+  </div>
+</div>

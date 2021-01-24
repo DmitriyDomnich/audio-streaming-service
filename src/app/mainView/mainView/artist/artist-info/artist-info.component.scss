@@ -15,6 +15,26 @@
     display: block;
     position: absolute;
 }
+button{
+    border: none;
+    outline: none;
+    background-color: royalblue;
+}
+
+.liked{
+    color: red;
+
+}
+.notLiked{
+    color: black;
+    
+}
+.followButton{
+    position: absolute;
+    top: 145%;
+    right: 5%;
+    width: 15%;
+}
 h1{
     font-size: 50px;
     text-overflow: ellipsis;

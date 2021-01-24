@@ -8,13 +8,15 @@ import { ArtistTopTracksComponent } from './artist-top-tracks/artist-top-tracks/
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     CommonModule,
     MatTableModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MatButtonModule
   ],
   declarations: [ArtistComponent, ArtistInfoComponent, ArtistAlbumsComponent, ArtistRelatedArtistsComponent, ArtistTopTracksComponent,
   ]

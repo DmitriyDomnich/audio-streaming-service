@@ -1,5 +1,5 @@
 
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Playlist } from 'src/app/shared/models/playlist';
@@ -18,13 +18,14 @@ export class PlaylistInfoComponent implements OnChanges, OnInit {
   private subscription: Subscription;
 
   constructor(
-    private acticatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private tracksService: TracksService,
   ){
     const id = 'id';
     this.id = '';
-    this.subscription = acticatedRoute.params.subscribe(params => this.id = params[id]);
+    this.subscription = activatedRoute.params.subscribe(params => this.id = params[id]);
   }
+
   ngOnInit(): void{
 
   }

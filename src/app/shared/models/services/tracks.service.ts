@@ -48,6 +48,7 @@ export class TracksService {
               return { id: artist.id, name: artist.name };
             }),
             isExplicit: track.explicit,
+            trackNum: track.track_number,
             duration: track.duration_ms
           };
         });
@@ -101,7 +102,7 @@ export class TracksService {
     const httpOptions = {
       headers: heads,
       params: {
-        fields: `items(added_at,track(id,images,name,duration_ms,explicit,album(name,id,album_type),artists(id,name)))`,
+        fields: `items(added_at,track(id,images,track_number,name,duration_ms,explicit,album(name,id,album_type),artists(id,name)))`,
       },
     };
     // while (this.offset !== total) {
@@ -173,6 +174,7 @@ export class TracksService {
                 name: item.track.album.name,
                 albumType: item.track.album.album_type,
               },
+              trackNum: item.track.track_number,
               name: item.track.name,
               artists: item.track.artists.map((artist: any) => {
                 return {

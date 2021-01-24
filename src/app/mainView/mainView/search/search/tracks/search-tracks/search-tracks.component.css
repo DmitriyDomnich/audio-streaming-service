@@ -1,0 +1,50 @@
+table{
+    position: relative;
+    left: 1%;
+    top: 0vh;
+    background-color: transparent;
+    color: black;
+    text-overflow: ellipsis;
+    width: 73%;
+}
+img{
+    width: 80px;
+    height: 80px;
+}
+a{
+    text-decoration: none;
+    color: black;
+
+}
+a:hover{
+    text-decoration: underline;
+}
+.heart{
+    font-size: 25px;
+    color: red;
+    margin-left: 4.5px;
+ }
+ .heart:hover{
+     color: black;
+ }
+ h1{
+     font-size: 30px;
+ }
+ button{
+     background-color: transparent;
+     outline: none;
+     border: none;
+ }
+ .notFilledHeart{
+     font-size: 32px;
+}
+.notFilledHeart:hover{
+    color: red;
+    fill: red;
+}
+.mat-column-isLiked{
+    width: 10%;
+}
+*{
+    font-size: 18px;
+}
